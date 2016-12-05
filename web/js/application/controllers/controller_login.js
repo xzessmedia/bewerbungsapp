@@ -2,13 +2,13 @@
  * @Author: Tim Koepsel 
  * @Date: 2016-11-16 02:38:27 
  * @Last Modified by: Tim Koepsel
- * @Last Modified time: 2016-12-05 14:14:40
+ * @Last Modified time: 2016-12-05 14:41:54
  */
 'use strict';
 
 var app = angular.module('ApplicationApp');
 
-app.controller('LoginController', function($scope, $log, $http, $location, $window, toastr, $facebook, $auth, RestService,AppSettings) {
+app.controller('LoginController', function($scope, $log, $http, $location, $window, toastr, $facebook, $auth, RestService,AppSettings,locale, localeSupported,localeEvents) {
 
 
 
