@@ -14,7 +14,7 @@
                     <div style="padding-top:30px" class="panel-body" >
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                            <strong>Einloggen ohne Facebook:</strong></br>
+                            <strong>Login:</strong></br>
                         <form id="loginform" class="form-horizontal" ng-submit="Login(email,password)">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
@@ -55,8 +55,19 @@
                                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
                                    
 											
-                                        <strong>Login per Facebook</strong></br>
-								<button ng-click="authenticate('facebook')">Sign in with Facebook</button> <button ng-click="authenticate('google')">Sign in with Google</button>
+                                        <strong>or</strong></br>
+                                        <p><button class="btn btn-block btn-social btn-facebook" ng-click="authenticate('facebook')"><span class="fa fa-facebook"></span>Sign in with Facebook</button></p>
+                                        <p><button class="btn btn-block btn-social btn-google"ng-click="authenticate('google')"><span class="fa fa-google"></span>Sign in with Google</button></p>
+                                        <p><button class="btn btn-block btn-social btn-github" ng-click="authenticate('github')"><span class="fa fa-github"></span>Sign in with GitHub</button></p>
+                                        <p><button class="btn btn-block btn-social btn-linkedin" ng-click="authenticate('linkedin')"><span class="fa fa-linkedin"></span>Sign in with LinkedIn</button></p>
+                                        <p><button class="btn btn-block btn-social btn-instagram" ng-click="authenticate('instagram')"><span class="fa fa-instagram"></span>Sign in with Instagram</button></p>
+                                        <p><button class="btn btn-block btn-social btn-twitter" ng-click="authenticate('twitter')"><span class="fa fa-twitter"></span>Sign in with Twitter</button></p>
+                                        <p><button class="btn btn-block btn-social btn-foursquare" ng-click="authenticate('foursquare')"><span class="fa fa-foursquare"></span>Sign in with Foursquare</button></p>
+                                        <p><button class="btn btn-block btn-social btn-yahoo" ng-click="authenticate('yahoo')"><span class="fa fa-yahoo"></span>Sign in with Yahoo</button></p>
+                                        <p><button class="btn btn-block btn-social btn-microsoft" ng-click="authenticate('live')"><span class="fa fa-microsoft"></span>Sign in with Windows Live</button></p>
+                                        <p><button class="btn btn-block btn-social btn-twitch" ng-click="authenticate('twitch')"><span class="fa fa-twitch"></span>Sign in with Twitch</button></p>
+                                        <p><button class="btn btn-block btn-social btn-bitbucket" ng-click="authenticate('bitbucket')"><span class="fa fa-bitbucket"></span>Sign in with Bitbucket</button></p>
+                                        <p><button class="btn btn-block btn-social btn-spotify" ng-click="authenticate('spotify')"><span class="fa fa-spotify"></span>Sign in with Spotify</button></p>
                                         </div>
                                     </div>
                                 </div>    
@@ -132,7 +143,18 @@
                                 <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
                                     
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Mit Facebook registrieren</button>
+                                       <p><button class="btn btn-block btn-social btn-facebook" ng-click="authenticate('facebook')"><span class="fa fa-facebook"></span>Sign in with Facebook</button></p>
+                                        <p><button class="btn btn-block btn-social btn-google"ng-click="authenticate('google')"><span class="fa fa-google"></span>Sign in with Google</button></p>
+                                        <p><button class="btn btn-block btn-social btn-github" ng-click="authenticate('github')"><span class="fa fa-github"></span>Sign in with GitHub</button></p>
+                                        <p><button class="btn btn-block btn-social btn-linkedin" ng-click="authenticate('linkedin')"><span class="fa fa-linkedin"></span>Sign in with LinkedIn</button></p>
+                                        <p><button class="btn btn-block btn-social btn-instagram" ng-click="authenticate('instagram')"><span class="fa fa-instagram"></span>Sign in with Instagram</button></p>
+                                        <p><button class="btn btn-block btn-social btn-twitter" ng-click="authenticate('twitter')"><span class="fa fa-twitter"></span>Sign in with Twitter</button></p>
+                                        <p><button class="btn btn-block btn-social btn-foursquare" ng-click="authenticate('foursquare')"><span class="fa fa-foursquare"></span>Sign in with Foursquare</button></p>
+                                        <p><button class="btn btn-block btn-social btn-yahoo" ng-click="authenticate('yahoo')"><span class="fa fa-yahoo"></span>Sign in with Yahoo</button></p>
+                                        <p><button class="btn btn-block btn-social btn-microsoft" ng-click="authenticate('live')"><span class="fa fa-microsoft"></span>Sign in with Windows Live</button></p>
+                                        <p><button class="btn btn-block btn-social btn-twitch" ng-click="authenticate('twitch')"><span class="fa fa-twitch"></span>Sign in with Twitch</button></p>
+                                        <p><button class="btn btn-block btn-social btn-bitbucket" ng-click="authenticate('bitbucket')"><span class="fa fa-bitbucket"></span>Sign in with Bitbucket</button></p>
+                                        <p><button class="btn btn-block btn-social btn-spotify" ng-click="authenticate('spotify')"><span class="fa fa-spotify"></span>Sign in with Spotify</button></p>
                                     </div>                                           
                                         
                                 </div>
