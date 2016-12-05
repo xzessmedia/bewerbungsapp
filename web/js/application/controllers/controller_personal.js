@@ -1,8 +1,14 @@
+/*
+ * @Author: Tim Koepsel 
+ * @Date: 2016-11-16 02:38:34 
+ * @Last Modified by: Tim Koepsel
+ * @Last Modified time: 2016-11-29 16:05:49
+ */
 'use strict';
 
 var app = angular.module('ApplicationApp');
-app.controller('PersonalController', function($scope,toastr, Data,ngDialog){
-	 $scope.onlyNumbers = /^\d+$/;  
+app.controller('PersonalController', function($scope,toastr, Data,ngDialog, locale, localeSupported,localeEvents){
+	$scope.onlyNumbers = /^\d+$/;  
 	$scope.firstname 	= "";
 	$scope.lastname 	= "";
 	$scope.jobtitle		= "";
@@ -37,11 +43,6 @@ app.controller('PersonalController', function($scope,toastr, Data,ngDialog){
 	    Data.setPersonalPicture(fileObj);
 	};
 
-	
-	
-	$scope.setPersonalDataFamilie = function(geburtsort, familienstand, kinder) {
-		Data.setPersonalDataFamilie(geburtsort,familienstand,kinder);
-	}
  	 $scope.setPersonalDataSocialMedia = function(facebook,xing,twitter,github,website) {
 		Data.setPersonalDataSocialMedia(facebook,xing,twitter,github,website);
 	}
@@ -50,71 +51,38 @@ app.controller('PersonalController', function($scope,toastr, Data,ngDialog){
 	}
 	
 	
-	$scope.setPersonalData = function(firstname,lastname,jobtitle,ausbildung,email,phonenumber,street, streetnumber, zipcode, city,birthdate,picture,facebook,xing,twitter,github,website) {
-		Data.setPersonalData(firstname,lastname,jobtitle,ausbildung,email,phonenumber,street, streetnumber, zipcode, city,birthdate,picture);
+	$scope.setPersonalData = function(firstname,lastname,jobtitle,ausbildung,email,phonenumber,street, streetnumber, zipcode, city,birthdate,birthplace,familystatus,children,picture) {
+		Data.setPersonalData(firstname,lastname,jobtitle,ausbildung,email,phonenumber,street, streetnumber, zipcode, city,birthdate,birthplace,familystatus,children,picture);
 	}
 	
-	 $scope.remove = function (scope) {
-        scope.remove();
-      };
+	/*************************************************************************
+	* Localisation
+	* ***********************************************************************
+	*/
+	   $scope.supportedLang = localeSupported;
+            $scope.localeData = {
+                'en-US': {
+                    flagClass: 'flag-us',
+                    langDisplayText: 'English'
+                },
+                'de-DE': {
+                    flagClass: 'flag-de',
+                    langDisplayText: 'Deutsch'
+                }
+            };
 
-      $scope.toggle = function (scope) {
-        scope.toggle();
-      };
 
-      $scope.moveLastToTheBeginning = function () {
-        var a = $scope.data.pop();
-        $scope.data.splice(0, 0, a);
-      };
-	 
-     $scope.newObject = function() {
-		 ngDialog.open({
-			 plain: true,
-			 template: '<h2>Name der Fähigkeit oder Kenntnis</h2><p>Was für eine Kenntnis oder Fähigkeit soll hinzugefügt werden?</p><input type="text" placeholder="Fähigkeit bzw Kenntnis" ng-model="skill"></br></br><button ng-click="NewItem(skill)">Fähigkeit hinzufügen</button>',
-			 scope: $scope,
-			 controller: 'PersonalController'
-		});
-     };
+            $scope.setLocale = function (loc) {
+                locale.setLocale(loc);
+            };
 
-	 
-	  
+            locale.ready('common').then(function () {
+                $scope.flagClass = $scope.localeData[locale.getLocale()].flagClass;
+                $scope.langDisplayText = $scope.localeData[locale.getLocale()].langDisplayText;
+            });
 
-      $scope.newObjectItem = function () {
-		 ngDialog.open({
-			 plain: true,
-			 template: '<h2>Name der Fähigkeit oder Kenntnis</h2><p>Was für eine Kenntnis oder Fähigkeit soll hinzugefügt werden?</p><input type="text" placeholder="Fähigkeit bzw Kenntnis" ng-model="skill" class="form-control"></br></br><button class="btn btn-default" ng-click="NewItem(skill)">Fähigkeit hinzufügen</button>',
-			 scope: $scope,
-			 controller: 'PersonalController'
-		 });
-      };
-       $scope.newObjectSubItem = function (scope) {
-		   $scope.subitem = scope;
-		 ngDialog.open({
-			 plain: true,
-			 template: '<h2>Name der Fähigkeit oder Kenntnis</h2><p>Was für eine Kenntnis oder Fähigkeit soll hinzugefügt werden?</p><input type="text" placeholder="Fähigkeit bzw Kenntnis" ng-model="skill" class="form-control"></br></br><button class="btn btn-default" ng-click="newSubItem(skill,subitem)">Unterfähigkeit hinzufügen</button>',
-			 scope: $scope,
-			 controller: 'PersonalController'
-		 });
-	 };
-      $scope.NewItem = function (itemtitle) {
-	ngDialog.close();
-	Data.addSkill(itemtitle);
-	$scope.data = Data.getSkills();
-      };
-      $scope.newSubItem = function (skill,scope) {
-		toastr.success('Unterobjekt wurde erstellt');
-		ngDialog.close();
-		Data.addSubskill(skill,scope);
-	};
-      $scope.collapseAll = function () {
-        $scope.$broadcast('angular-ui-tree:collapse-all');
-      };
-
-      $scope.expandAll = function () {
-        $scope.$broadcast('angular-ui-tree:expand-all');
-      };
-
-	  
-	  
-  
+            $scope.$on(localeEvents.localeChanges, function (event, data) {
+                $scope.flagClass = $scope.localeData[data].flagClass;
+                $scope.langDisplayText = $scope.localeData[data].langDisplayText;
+            });
 });

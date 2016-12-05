@@ -15,7 +15,7 @@
 				$('#summernote').summernote();
 			});
 		  </script>
-	<button ng-click="sendBugReport()" class="btn btn-default">Fehler melden</button>
+	<button ng-click="sendBugReport(email,bugdescription)" class="btn btn-default">Fehler melden</button>
       </div>
     </div>
  </div>

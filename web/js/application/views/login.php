@@ -15,16 +15,16 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             <strong>Einloggen ohne Facebook:</strong></br>
-                        <form id="loginform" class="form-horizontal" role="form" action="login.php?login=true" method="post">
+                        <form id="loginform" class="form-horizontal" ng-submit="Login(email,password)">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="E-Mail Adresse">                                        
+                                        <input id="login-username" type="text" ng-model="email" class="form-control" name="username" value="" placeholder="E-Mail Adresse">                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Passwort">
+                                        <input id="login-password" ng-model="password" type="password" class="form-control" name="password" placeholder="Passwort">
                                     </div>
                                     
 
@@ -37,7 +37,7 @@
                                       </div>
                                     </div>
 			<div class="col-sm-12 controls">
-			<button id="btn-login" onclick="$(this).closest('form').submit()"  class="btn btn-primary">Login</button>
+			<button id="btn-login" ng-click="Login(email,password)"  class="btn btn-primary">Login</button>
 			<a onclick="$('#loginbox').hide(); $('#signupbox').show()"  class="btn btn-primary">Registrieren</a>
 			</div>
 			<hr>
@@ -77,7 +77,7 @@
                             <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Einloggen</a></div>
                         </div>  
                         <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form" action="login.php?register=true" method="post">
+                            <form id="signupform" class="form-horizontal" role="form">
                                 
                                 <div id="signupalert" style="display:none" class="alert alert-danger">
                                     <p>Error:</p>
@@ -89,26 +89,26 @@
                                 <div class="form-group">
                                     <label for="email" class="col-md-3 control-label">Email</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Addresse">
+                                        <input type="text" ng-model="EMail" class="form-control" name="email" placeholder="Email Addresse">
                                     </div>
                                 </div>
                                     
                                 <div class="form-group">
                                     <label for="firstname" class="col-md-3 control-label">Vorname</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="Vorname">
+                                        <input type="text" ng-model="FirstName" class="form-control" name="firstname" placeholder="Vorname">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="lastname" class="col-md-3 control-label">Nachname</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Nachname">
+                                        <input type="text" ng-model="LastName" class="form-control" name="lastname" placeholder="Nachname">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="col-md-3 control-label">Passwort</label>
                                     <div class="col-md-9">
-                                        <input type="password" class="form-control" name="password" placeholder="Passwort">
+                                        <input type="password" ng-model="Password" class="form-control" name="password" placeholder="Passwort">
                                     </div>
                                 </div>
                                     
@@ -123,7 +123,7 @@
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
 										
-                                        <button id="btn-signup" type="button" name="register"  onclick="$(this).closest('form').submit()" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Registrieren</button>
+                                        <button id="btn-signup" type="button" name="register"  ng-click="RegisterAccount(FirstName,LastName,EMail,Password)" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Registrieren</button>
 				<a id="btn-fbsignup" type="button" class="btn btn-primary" onclick="$('#signupbox').hide(); $('#loginbox').show()"><i class="icon-facebook"></i>   Zurück</a>
                                         <span style="margin-left:8px;">oder:</span>  
                                     </div>

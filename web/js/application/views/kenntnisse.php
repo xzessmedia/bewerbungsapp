@@ -1,18 +1,19 @@
-<h1>Persönliche Daten:</h1>
-<h2>Kenntnisse</h2>
 
-<div ng-controller="PersonalController">
-	
+<div ng-controller="KenntnisseController">
+
+<h1>{{ 'general.PersonalData' | i18n }}:</h1>
+<h2>{{ 'personal.Skills' | i18n }}</h2>
+
 <ul class="nav nav-pills nav-justified">
-  <li><a href="#/personal">Person</a></li>
-  <li><a href="#/familie">Familie</a></li>
-  <li class="active"><a href="#/kenntnisse">Kenntnisse</a></li>
-  <li><a href="#/sozialemedien">Soziale Netzwerke</a></li>
+  <li><a i18n="general.Person" href="#/personal">Person</a></li>
+  <li><a i18n="general.Work" href="#/beruf">Beruf</a></li>
+  <li class="active"><a i18n="general.Knowledge" href="#/kenntnisse">Kenntnisse</a></li>
+  <li><a i18n="general.SocialMedia" href="#/sozialemedien">Soziale Medien</a></li>
 </ul>
 </br>
 </br>
 
-  <h2>Deine Fähigkeiten und Kenntnisse:</h2>
+  <h2>{{ 'personal.SkillsAndKnowledge' | i18n }}:</h2>
 <hr>
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
@@ -41,16 +42,16 @@
 
   
     <div ui-tree id="tree-root">
-      <ol ui-tree-nodes ng-model="data">
-        <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+      <ol ui-tree-nodes ng-model="personaldata.skilldata">
+        <li ng-repeat="node in personaldata.skilldata" ui-tree-node ng-include="'nodes_renderer.html'"></li>
       </ol>
     </div>
   <hr>
 	  
   
 <div class="btn-group">
-  <button class="btn btn-primary" ng-click="newObjectItem(skill)">Fähigkeit hinzufügen</button>
-   <button ng-click="setPersonalDataKenntnisse(data)" class="btn btn-secondary">Änderungen speichern</button>
+  <button class="btn btn-primary" ng-click="newObjectItem(skill)">{{ 'personal.AddSkill' | i18n }}</button>
+   <button ng-click="setPersonalDataKenntnissew(personaldata.skilldata)" class="btn btn-secondary" i18n="general.SaveChanges">Änderungen speichern</button>
   </div>
   
 		  

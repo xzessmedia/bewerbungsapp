@@ -15,7 +15,7 @@
 				$('#summernote').summernote();
 			});
 		  </script>
-	<button ng-click="sendIdea()" class="btn btn-default">Idee einreichen</button>
+	<button ng-click="sendIdea(email,ideadescription)" class="btn btn-default">Idee einreichen</button>
       </div>
     </div>
  </div>

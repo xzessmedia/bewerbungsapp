@@ -13,6 +13,10 @@
 	<div class="jumbotron">
 		
 		<h3>Anschreiben</h3>
+		<div class="form-group">
+		<label for="betreff">Betreff:</label>
+		    <input type="text"  ng-model="subject" name="betreff"  class="form-control" placeholder="Stellenaausschreibung / Chiffre etc">
+		</div>
 		<p>Benutze keine Anrede, diese wird automatisch für dich generiert!</p>
 		   <summernote ng-model="introtext" id="summernote"><p>Dein persönliches Anschreiben ohne Anrede (Sehr geehrte..), diese wird später hinzugefügt!</p></summernote>
 		   
@@ -26,7 +30,7 @@
 	</div>
 	  <div class="jumbotron">
 		  <p> Bitte denk daran deine Änderungen auch zu speichern!</p>
-	   <button ng-click="setIntroText(introtext)" class="btn btn-default">Änderungen speichern</button>
+	   <button ng-click="setIntroText(subject,introtext)" class="btn btn-default">Änderungen speichern</button>
    	</div>
 </div>
 	  </form>

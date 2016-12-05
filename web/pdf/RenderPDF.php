@@ -10,6 +10,40 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/mpdf/mpdf/mpdf.php';
 
+/* Custom Template Class
+*
+* Diese Klasse dient dazu HTML Templates zu laden und darzustellen bzw
+*
+* In einer HTML Seite Werte zu ersetzen
+*
+*/
+
+class Template
+{
+    protected $_file;
+    protected $_data = array();
+
+    public function __construct($file = null)
+    {
+        $this->_file = $file;
+    }
+
+    public function set($key, $value)
+    {
+        $this->_data[$key] = $value;
+        return $this;
+    }
+
+    public function render()
+    {
+        extract($this->_data);
+        ob_start();
+        include($this->_file);
+        return ob_get_clean();
+    }
+}
+
+
 /* JSon Verarbeiten */
 $postjson 	= $_POST['json'];
 $getjson	= $_GET['json'];
@@ -58,6 +92,9 @@ $ausbildung = $personaldata['ausbildung'];
 /* Anschreiben */
 $introtext = $contentarray['introtext'];
 
+/* Betreff */
+$subject = $contentarray['subject'];
+
 /*Lebenslauf */
 $cvdata = $contentarray['CVData'];
 $lebenslaufitems = $cvdata['LebenslaufItems'];
@@ -66,8 +103,17 @@ $abschlussitems = $cvdata['AbschluesseItems'];
 /* Referenzen */
 $referencestext = $contentarray['refdata'];
 
+
 /* Personal */
 $personaltext = $contentarray['personaltext'];
+
+/* Gehaltsvorstellung */
+$showmoney = $personaldata['showMoney'];
+$bruttogehalt = $personaldata['bruttogehaltprojahr'];
+
+if($showmoney == true) {
+	$gehalt = '<h2>Gehalt</h2><p>Meine Gehaltsvorstellung liegt bei '.$bruttogehalt.' € brutto pro Jahr</p></br></br>';
+}
 
 /* Kontaktdaten / Empfängerdaten */
 $contactdata = $contentarray['Contact'];
@@ -240,13 +286,17 @@ $html_deckblatt = '
 				</htmlpagefooter>
 <sethtmlpagefooter name="myfooter" value="on" show-this-page="1" />';
 
+/*
 $betreff = "";
 if ($ausbildung== true) {
-		$betreff = 'Bewerbung um einen Ausbildungsplatz als '.$jobtitle;
+		$betreff = 'Bewerbung um einen Ausbildungsplatz als '.$jobtitle.'</br>'.$subject;
 	}	else {
-		$betreff = 'Bewerbung als '.$jobtitle;
+		$betreff = 'Bewerbung als '.$jobtitle.'</br>';
 	}
 	
+*/
+$betreff = $subject;
+
 $html_anschreiben = '
 	<!--mpdf
 <htmlpageheader name="myheader">
@@ -396,9 +446,9 @@ $html_personal = '
 	<sethtmlpageheader name="myheader" value="on" show-this-page="1" />
 	<sethtmlpagefooter name="myfooter" value="on" />
 	mpdf-->
-		
-	<h2>Über mich</h2><br />
 	
+	'.$gehalt.'
+	<h2>Über mich</h2><br />
 	'.$personaltext;
 	
 	

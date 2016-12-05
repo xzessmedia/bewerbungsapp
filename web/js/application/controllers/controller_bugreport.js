@@ -1,26 +1,23 @@
+/*
+ * @Author: Tim Koepsel 
+ * @Date: 2016-11-16 02:37:59 
+ * @Last Modified by: Tim Koepsel
+ * @Last Modified time: 2016-12-01 00:37:17
+ */
 'use strict';
 
 var app = angular.module('ApplicationApp');
-app.controller('BugreportController', function($scope, $http, $templateCache, toastr, Data) {
-	
-	
-	
-	
-	$scope.bugdescription = "Gebe hier eine genaue Beschreibung an";
-	$scope.email = Data.getPersonalMail();
-	$scope.sendBugReport = function () {
-	var bugdata = { };
-	bugdata.bugdescription = $scope.bugdescription;
-	
-	        	// Post Bug to Server
-		$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-		var res = $http.post('src/SendBug.php', bugdata);
-		res.success(function(data, status, headers, config) {
-			$scope.serverresponse = data;
-			toastr.success('Vielen Dank, dein Fehlerbericht wurde den Entwicklern zugesendet! ');
-		});
-		res.error(function(data, status, headers, config) {
-			toastr.error( "failure message: " + JSON.stringify({data: data}));
-		});
-   	 };
+app.controller('BugreportController', function($scope,$log,$location, $http, $templateCache, toastr, Data,RestService) {
+
+
+
+    $scope.bugdescription = "Gebe hier eine genaue Beschreibung an";
+    $scope.email = Data.getPersonalMail();
+    $scope.sendBugReport = function(email,description) {
+        RestService.submitBugreport(email,description).then(function(response){
+                $log.log('Bugreport wurde auf Server gespeichert: '+response.data);
+                toastr.success('Bugreport wurde eingesendet!');
+                $location.path("/");
+                });
+    };
 });

@@ -1,26 +1,20 @@
+/*
+ * @Author: Tim Koepsel 
+ * @Date: 2016-11-16 02:38:18 
+ * @Last Modified by: Tim Koepsel
+ * @Last Modified time: 2016-12-01 00:38:24
+ */
 'use strict';
 
 var app = angular.module('ApplicationApp');
-app.controller('IdeasController', function($scope, $http, $templateCache, toastr, Data) {
-	
-	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-	
-	
-	$scope.ideadescription = "Gebe hier eine genaue Beschreibung deiner Idee an";
-	$scope.email = Data.getPersonalMail();
-	$scope.sendIdea = function () {
-	var ideadata = { };
-	ideadata.ideadescription = $scope.ideadescription;
-	
-	        	// Post Bug to Server
-				
-		var res = $http.post('src/SendIdea.php', ideadata);
-		res.success(function(data, status, headers, config) {
-			$scope.serverresponse = data;
-			toastr.success('Vielen Dank, deine Idee wurde den Entwicklern zugesendet! ');
-		});
-		res.error(function(data, status, headers, config) {
-			toastr.error( "failure message: " + JSON.stringify({data: data}));
-		});
-   	 };
+app.controller('IdeasController', function($scope,$log,$location, $http, $templateCache, toastr, Data,RestService) {
+    $scope.ideadescription = "Gebe hier eine genaue Beschreibung an";
+    $scope.email = Data.getPersonalMail();
+    $scope.sendIdea = function(email,description) {
+        RestService.submitIdea(email,description).then(function(response){
+                $log.log('Idee wurde auf Server gespeichert: '+response.data);
+                toastr.success('Idee wurde eingesendet!');
+                $location.path("/");
+                });
+    };
 });

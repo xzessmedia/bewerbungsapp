@@ -3,7 +3,7 @@
 var app = angular.module('ApplicationApp');
 app.filter('tel', function () {
     return function (tel) {
-        console.log(tel);
+
         if (!tel) { return ''; }
 
         var value = tel.toString().trim().replace(/^\+/, '');

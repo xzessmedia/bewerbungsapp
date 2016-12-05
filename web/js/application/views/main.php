@@ -1,8 +1,3 @@
-<?php require_once("../appcore.php"); ?>
-
-
-
-
 	<div ng-controller="StartpageController">
 		
 		<div align="left">
@@ -12,16 +7,18 @@
 		<h1>Übersicht</h1>
 		</br>
 		</br>
-		<div class="embed-responsive embed-responsive-16by9">
-		<iframe width="460" height="215" src="https://www.youtube.com/embed/Wkv_HUbRlu4" frameborder="0" allowfullscreen></iframe>
-		</div>
+		
 	
 		
 		
 		    <div class="row">
 			<div class="col-sm-4">
 				<h3>Versionsübersicht:</h3>
-				<p><strong>Aktuelle Version:</strong> <?php echo $version; ?></p>
+				<p><strong>Aktuelle Version:</strong>  {{version}}</p>
+				<hr>
+				<div class="embed-responsive embed-responsive-16by9">
+				<iframe width="460" height="215" src="https://www.youtube.com/embed/Wkv_HUbRlu4" frameborder="0" allowfullscreen></iframe>
+				</div>
 				<hr>
 				<h4>Letzte Änderungen:</h4>
 				 <div class="panel-group" ng-repeat="item in updates">

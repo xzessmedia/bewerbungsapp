@@ -38,7 +38,7 @@ https://app.bewerbungsapp.eu/pdf/RenderPDF.php
 
 <h1>Bewerbungsmappe als PDF exportieren</h1>
 <div ng-controller="SaveApplicationController">
-	<form action="https://app.bewerbungsapp.eu/pdf/RenderPDF.php" method="post" enctype="multipart/form-data">	
+	<form action="pdf/RenderPDF.php" method="post" enctype="multipart/form-data">	
 <div class="form-group">
 	<label for="filename">Dateiname:</label>
 	 <input type="text"  ng-model="filename" name="filename" id="filename" class="form-control" placeholder="Name der Bewerbungsmappendatei">

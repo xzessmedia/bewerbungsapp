@@ -1,6 +1,6 @@
 <div ng-controller="AboutController">
 <h1>Über den Entwickler</h1>
-<a ng-click="clickToOpen()"><img src="https://www.thewaxingbox.de/wp-content/uploads/2016/05/xzessmediaicontransparent.png"></a>
+<a ng-click="clickToOpen()"><img src="images/xzessmediaicontransparent.png"></a>
 </div>
 
 <script type="text/ng-template" id="templateId">

@@ -1,3 +1,9 @@
+/*
+ * @Author: Tim Koepsel 
+ * @Date: 2016-11-29 15:52:52 
+ * @Last Modified by:   Tim Koepsel 
+ * @Last Modified time: 2016-11-29 15:52:52 
+ */
 'use strict';
 
 var app = angular.module('ApplicationApp');
