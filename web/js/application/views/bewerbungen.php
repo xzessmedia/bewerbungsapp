@@ -3,7 +3,8 @@
 <div ng-controller="BewerbungenController">
 <h1>Bewerbungen:</h1>
 
-<div align="right"><button class="btn btn-secondary btn-xs">Download CSV</button></div>
+<div align="right"><button class="btn btn-secondary btn-xs"  ng-csv="bewerbungen" filename="bewerbungen.csv">Download CSV</button></div>
+
     <div class="table-responsive">
         
     <table class="table">

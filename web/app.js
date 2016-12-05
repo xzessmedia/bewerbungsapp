@@ -1,14 +1,11 @@
+/*
+ * @Author: Tim Koepsel 
+ * @Date: 2016-11-16 20:22:39 
+ * @Last Modified by: Tim Koepsel
+ * @Last Modified time: 2016-12-05 16:14:22
+ */
 'use strict';
 
-	
-angular.module('ApplicationApp', ['ngAnimate','ngCordova','lvl.directives.fileupload','toastr', 'ui.tree','ngRoute','ngDialog','ngStorage','gapi','angular-loading-bar','angularModalService','naif.base64','ngCookies','ngFacebook','summernote','satellizer','angularSoap'])
-.value('GoogleApp', {
-    apiKey: 'AIzaSyBXeoGygZRUifCUu_85PC9qCy7nqfCFiBc',
-    clientId: '922222873086-7unc2nqjor0s27pesplm22ih1ngiq792.apps.googleusercontent.com',
-    scopes: [
-      // whatever scopes you need for your app, for example:
-      'https://www.googleapis.com/auth/drive',
-      'https://www.googleapis.com/auth/userinfo.profile'
-      // ...
-    ]
-});
+const appversion = "0.46";
+
+angular.module('ApplicationApp', ['ngLocalize', 'ngSanitize', 'ngCsv','ngLocalize.InstalledLanguages', 'ngAnimate', 'ngCordova', 'lvl.directives.fileupload', 'toastr', 'ui.tree', 'ngRoute', 'ngDialog', 'ngStorage', 'gapi', 'angular-loading-bar', 'angularModalService', 'naif.base64', 'ngCookies', 'ngFacebook', 'summernote', 'satellizer', 'angularSoap']);
