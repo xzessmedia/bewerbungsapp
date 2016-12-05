@@ -1,4 +1,4 @@
-	<div ng-controller="StartpageController">
+	<div class="container-fluid" ng-controller="StartpageController">
 		
 		<div align="left">
 			<img src="images/logo72.png"><br/>
@@ -9,8 +9,7 @@
 		</br>
 		
 	
-		
-		
+
 		    <div class="row">
 			<div class="col-sm-4">
 				<h3>Versionsübersicht:</h3>
