@@ -2,7 +2,7 @@
  * @Author: Tim Koepsel 
  * @Date: 2016-11-29 21:14:38 
  * @Last Modified by: Tim Koepsel
- * @Last Modified time: 2016-12-01 01:50:54
+ * @Last Modified time: 2016-12-05 16:47:40
  */
 
 
@@ -19,7 +19,7 @@ var app = angular.module('ApplicationApp');
  * ***********************************************************************
  */
 app.factory('AppSettings', function(toastr, $location, $window, $http,locale, localeSupported,localeEvents,$localStorage, $sessionStorage) {
-var version = "0.45.21";
+var version = "0.47";
 var appsettings = {};
 var storage = $localStorage.$default({
     locale: "de-DE",
