@@ -54,5 +54,12 @@
     "Password": "Password",
     "InviteCode": "Invite-Code",
     "or":"or",
-    "back": "go back"
+    "back": "go back",
+    "Overview": "Overview",
+    "VersionOverview": "Versionoverview",
+    "CurrentVersion": "Current Version",
+    "LastChanges": "Last Modifications",
+    "TodoList": "ToDo list",
+    "BugList": "Bug list",
+    "Discussion": "Discussion"
 }

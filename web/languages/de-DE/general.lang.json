@@ -54,5 +54,12 @@
     "Password": "Passwort",
     "InviteCode": "Einladungs-Code",
     "or":"oder",
-    "back": "Zurück"
+    "back": "Zurück",
+    "Overview": "Übersicht",
+    "VersionOverview": "Versionsübersicht",
+    "CurrentVersion": "Aktuelle Version",
+    "LastChanges": "Letzte Änderungen",
+    "TodoList": "ToDo Liste",
+    "BugList": "Bug Liste",
+    "Discussion": "Buschfunk"
 }
