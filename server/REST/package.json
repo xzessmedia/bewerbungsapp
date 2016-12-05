@@ -1,0 +1,15 @@
+{
+  "name": "bewerbungsappserver",
+  "version": "0.2.5",
+  "description": "bewerbungsapp.eu",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Koepsel",
+  "license": "ISC",
+  "dependencies": {
+    "multer": "^1.2.0",
+    "node-mysql": "^0.4.2"
+  }
+}

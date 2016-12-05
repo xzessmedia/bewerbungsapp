@@ -1,0 +1,204 @@
+<?xml version ='1.0' encoding ='UTF-8' ?>
+<definitions name='Bewerbungsapp'
+  targetNamespace='https://app.bewerbungsapp.eu/'
+  xmlns:tns='https://app.bewerbungsapp.eu/'
+  xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/'
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:soapenc='http://schemas.xmlsoap.org/soap/encoding/'
+  xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+  xmlns='http://schemas.xmlsoap.org/wsdl/'> 
+
+<message name='addUserRequest'>
+  <part name='firstname' type='xsd:string'/>
+  <part name='lastname' type='xsd:string'/>
+  <part name='email' type='xsd:string'/>
+  <part name='facebookID' type='xsd:string'/>
+</message>
+<message name='addUserResponse'>
+  <part name='Result' type='xsd:int'/>
+</message> 
+
+<message name='LoginRequest'>
+  <part name='facebookID' type='xsd:string'/>
+</message>
+<message name='LoginResponse'>
+  <part name='Result' type='xsd:boolean'/>
+  </message> 
+  
+  <message name='IsRegisteredRequest'>
+  <part name='facebookID' type='xsd:string'/>
+</message>
+<message name='IsRegisteredResponse'>
+  <part name='Result' type='xsd:boolean'/>
+  </message> 
+  
+   <message name='SendPingRequest'>
+  <part name='facebookID' type='xsd:string'/>
+</message>
+<message name='SendPingResponse'>
+  <part name='Result' type='xsd:boolean'/>
+  </message> 
+  
+   <message name='addApplicationRequest'>
+  <part name='facebookID' type='xsd:string'/>
+  <part name='data' type='xsd:string'/>
+</message>
+<message name='addApplicationResponse'>
+  <part name='Result' type='xsd:boolean'/>
+  </message> 
+  
+    <message name='countActiveUsersRequest'>
+
+</message>
+<message name='countActiveUsersResponse'>
+  <part name='Result' type='xsd:int'/>
+  </message>
+  
+  <message name='CalculateMinutesRequest'>
+  <part name='facebookID' type='xsd:string'/>
+</message>
+<message name='CalculateMinutesResponse'>
+  <part name='Result' type='xsd:int'/>
+  </message> 
+  
+    <message name='SQLQueryRequest'>
+  <part name='sql' type='xsd:string'/>
+</message>
+<message name='SQLQueryResponse'>
+  <part name='Result' type='xsd:string'/>
+  </message> 
+
+<portType name='servicePortType'>
+  <operation name='AddUser'>
+    <input message='tns:addUserRequest'/>
+    <output message='tns:addUserResponse'/>
+  </operation>
+  <operation name='LoginUser'>
+    <input message='tns:LoginRequest'/>
+    <output message='tns:LoginResponse'/>
+  </operation>
+  <operation name='IsRegisteredUser'>
+    <input message='tns:IsRegisteredRequest'/>
+    <output message='tns:IsRegisteredResponse'/>
+   </operation>
+  <operation name='SendPing'>
+    <input message='tns:IsRegisteredRequest'/>
+    <output message='tns:IsRegisteredResponse'/>
+   </operation>
+   <operation name='AddApplication'>
+    <input message='tns:addApplicationRequest'/>
+    <output message='tns:addApplicationResponse'/>
+   </operation>
+   <operation name='CountActiveUsers'>
+    <input message='tns:countActiveUsersRequest'/>
+    <output message='tns:countActiveUsersResponse'/>
+   </operation>
+      <operation name='CalculateMinutes'>
+    <input message='tns:CalculateMinutesRequest'/>
+    <output message='tns:CalculateMinutesResponse'/>
+   </operation>
+         <operation name='SQLQuery'>
+    <input message='tns:SQLQueryRequest'/>
+    <output message='tns:SQLQueryResponse'/>
+	</operation>
+</portType> 
+
+<binding name='serviceBinding' type='tns:servicePortType'>
+  <soap:binding style='rpc'
+    transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='AddUser'>
+    <soap:operation soapAction='urn:Bewerbungsapp#registeruser'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+  </operation>
+  <operation name='LoginUser'>
+    <soap:operation soapAction='urn:Bewerbungsapp#loginuser'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='IsRegisteredUser'>
+    <soap:operation soapAction='urn:Bewerbungsapp#isregistereduser'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='SendPing'>
+    <soap:operation soapAction='urn:Bewerbungsapp#sendping'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='AddApplication'>
+    <soap:operation soapAction='urn:Bewerbungsapp#addapplication'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='CountActiveUsers'>
+    <soap:operation soapAction='urn:Bewerbungsapp#countactiveusers'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='CalculateMinutes'>
+    <soap:operation soapAction='urn:Bewerbungsapp#calculateminutes'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+</operation>
+  <operation name='SQLQuery'>
+    <soap:operation soapAction='urn:Bewerbungsapp#sqlquery'/>
+    <input>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </input>
+    <output>
+      <soap:body use='encoded' namespace='urn:Bewerbungsapp'
+        encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'/>
+    </output>
+	</operation>
+</binding> 
+
+<service name='AppService'>
+  <port name='AppPort' binding='serviceBinding'>
+    <soap:address location='https://app.bewerbungsapp.eu/appservice.php'/>
+  </port>
+</service>
+</definitions>
