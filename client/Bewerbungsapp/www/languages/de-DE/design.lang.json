@@ -1,0 +1,12 @@
+{
+    "Design": "Gestaltung",
+    "DesignDescription": "Du kannst hier alle Designeinstellungen deiner Bewerbung vornehmen",
+    "PDF": "PDF Einstellungen",
+    "Font": "Schriftart",
+    "ChooseFont": "-- Schriftart wählen --",
+    "eApplication": "eBewerbung",
+    "Theme": "Theme",
+    "ChooseTheme": "-- Thema wählen --",
+    "SiteTemplate": "Site Template",
+    "MailTemplate": "Mail Template"
+}

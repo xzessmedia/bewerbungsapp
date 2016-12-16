@@ -1,0 +1,10 @@
+@import url('//cdnjs.cloudflare.com/ajax/libs/summernote/0.5.1/summernote.css')
+
+.cart-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  background-color: yellow;
+}
+.cart-item.ng-enter-active {
+  background-color: white;
+}

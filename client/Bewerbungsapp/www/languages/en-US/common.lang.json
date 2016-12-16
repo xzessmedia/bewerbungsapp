@@ -1,0 +1,11 @@
+            {
+                    "yes": "Yes",
+                    "no": "No",
+                    "SocialNetworks": "Social Media",
+                    "FirstName": "First Name",
+                    "LastName": "Last Name",
+                    "Street": "Street",
+                    "ZipCode": "Zip Code",
+                    "City": "City",
+                    "PhoneNumber": "Phonenumber"
+            }

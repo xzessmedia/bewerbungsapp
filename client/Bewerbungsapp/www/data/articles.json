@@ -1,0 +1,6 @@
+[
+  {"id": "1", "title": "Fisch", "amount": "1" },/Applications/MAMP/htdocs/bewerbungsapp/data/todo.json
+  {"id": "2", "name": "Red Bull", "amount": "1" },
+  {"id": "3", "name": "Cola", "amount": "1" },
+  {"id": "4", "name": "Handy", "amount": "1" }
+]

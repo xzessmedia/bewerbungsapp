@@ -1,0 +1,38 @@
+{
+  "name": "ngDrive",
+  "version": "0.1.12",
+  "homepage": "https://github.com/pinoyyid/ngd1",
+  "authors": [
+    "Roy Smith <roy.smith.esq@gmail.com>"
+  ],
+  "description": "AngularJS (1) rich integration with Google Drive",
+  "main": "build/module.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "google",
+    "drive",
+    "gdrive",
+    "gapi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "scripts",
+    "Gruntfile.js"
+  ],
+  "devDependencies": {
+    "sinonjs": "~1.17.1",
+    "angular": "angularjs#~1.4.8",
+    "angular-mocks": "~1.4.8",
+    "jasmine-sinon": "~0.4.0"
+  }
+}

@@ -1,0 +1,24 @@
+ [
+       	{
+            "Title" : "eBewerbung",
+            "Text" : "Bewerbung als Website exportieren"
+	},{
+            "Title" : "Windows Release",
+            "Text" : "Die Windows Version wurde released und kann ganz unten auf der Seite unter Plattform Downloads heruntergeladen werden!"
+	},{
+            "Title" : "Facebook Integration",
+            "Text" : "Facebook wurde integriert"
+	},{
+            "Title" : "Rendern als PDF",
+            "Text" : "Die Bewerbungsmappen können nun auch als PDF gerendert werden"
+	},{
+            "Title" : "Datenexport hinzugefügt",
+            "Text" : "Ein Datensystem welches die Bewerbungsdaten enthält (Bewerbungsmappe speichern)"
+	},{
+            "Title" : "Datenimport hinzugefügt",
+            "Text" : "Es ist nun möglich die Daten zu importieren"
+       	 },{
+            "Title" : "Benutzersystem",
+            "Text" : "Ein Benutzersystem, bei dem sich Leute anmelden und registrieren können"
+        }
+]

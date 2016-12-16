@@ -1,0 +1,12 @@
+{
+    "Design": "Design",
+    "DesignDescription": "You can setup all design configuration of your application here",
+    "PDF": "PDF Settings",
+    "Font": "Font",
+    "ChooseFont": "-- Choose Font --",
+    "eApplication": "eApplication",
+    "Theme": "Theme",
+    "ChooseTheme": "-- Choose Theme --",
+    "SiteTemplate": "Site Template",
+    "MailTemplate": "Mail Template"
+}
